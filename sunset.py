@@ -14,8 +14,9 @@ parameters = {
 
 response = requests.get(url="https://api.sunrise-sunset.org/json", params=parameters)
 response.raise_for_status()
-
 data = response.json()
+
+
 # format to only get hours in format of 24 hour clock
 sunrise = data["results"]["sunrise"].split("T")[1].split(":")[0]
 sunset = data["results"]["sunset"].split("T")[1].split(":")[0]
